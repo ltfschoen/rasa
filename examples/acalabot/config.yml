@@ -1,0 +1,26 @@
+recipe: default.v1
+language: en
+
+pipeline:
+  - name: WhitespaceTokenizer
+    case_sensitive: False
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+    token_pattern: (?u)\b\w+\b
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DucklingEntityExtractor
+    url: http://localhost:8000
+    dimensions:
+      - number
+  - name: DIETClassifier
+    epochs: 100
+  - name: EntitySynonymMapper
+
+policies:
+  - name: TEDPolicy
+    epochs: 1
+  - name: AugmentedMemoizationPolicy
+  - name: RulePolicy

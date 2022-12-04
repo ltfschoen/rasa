@@ -1,0 +1,118 @@
+version: "3.1"
+intents:
+  - request_exchange:
+      use_entities: []
+  - chitchat:
+      use_entities: []
+  - inform
+  - affirm
+  - deny
+  - stop
+  - thankyou
+  - greet
+  - bot_challenge
+
+entities:
+  - greet
+  - pair
+  - number
+  - feedback
+  - liquidation_risk
+
+slots:
+  pair:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: pair
+  num_tokens:
+    type: float
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: number
+      intent: [inform, request_exchange]
+  high_liquidation_risk:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: liquidation_risk
+    - type: from_intent
+      intent: affirm
+      value: true
+      conditions:
+      - active_loop: exchange_form
+        requested_slot: high_liquidation_risk
+    - type: from_intent
+      intent: deny
+      value: false
+      conditions:
+      - active_loop: exchange_form
+        requested_slot: high_liquidation_risk
+  feedback:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: feedback
+    - type: from_text
+      conditions:
+      - active_loop: exchange_form
+        requested_slot: feedback
+
+responses:
+  utter_ask_pair:
+    - text: "What pair?"
+  utter_ask_num_tokens:
+    - text: "How many tokens?"
+  utter_ask_high_liquidation_risk:
+    - text: "Do you want high or low liquidation risk?"
+  utter_ask_feedback:
+    - text: "Please give your feedback on your experience so far"
+  utter_submit:
+  - text: "All done!"
+  utter_slots_values:
+    - text: "I am going to run an Acala exchange search using the following parameters:\n
+             - pair: {pair}\n
+             - num_tokens: {num_tokens}\n
+             - high_liquidation_risk: {high_liquidation_risk}\n
+             - feedback: {feedback}"
+  utter_noworries:
+    - text: "You are welcome :)"
+  utter_chitchat:
+    - text: "chitchat"
+  utter_ask_continue:
+    - text: "Do you want to continue?"
+  utter_wrong_pair:
+    - text: "Pair type is not in the database, please try again"
+  utter_wrong_num_tokens:
+    - text: "Number of tokens should be a positive integer, please try again"
+  utter_wrong_high_liquidation_risk:
+    - text: "Could not convert input to boolean value, please try again"
+  utter_default:
+    - text: "Sorry, I didn't understand you, please try input something else"
+  utter_greet:
+    - text: "Hello! I am an Acala exchange search assistant! How can I help?"
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+  utter_restart:
+    - text: "restarted"
+
+actions:
+- validate_exchange_form
+
+forms:
+  exchange_form:
+    ignored_intents:
+    - chitchat
+    required_slots:
+      - pair
+      - num_tokens
+      - high_liquidation_risk
+      - feedback
+
+session_config:
+  session_expiration_time: 60  # value in minutes
+  carry_over_slots_to_new_session: true

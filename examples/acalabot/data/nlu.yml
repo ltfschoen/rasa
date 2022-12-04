@@ -1,0 +1,341 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - [hi](greet)
+    - Hi
+    - Hey
+    - Hi bot
+    - Hey bot
+    - Hello
+    - Good morning
+    - hi again
+    - hi folks
+    - hi Mister
+    - hi pal!
+    - hi there
+    - greetings
+    - hello everybody
+    - hello is anybody there
+    - hello robot
+    - hallo
+    - heeey
+    - hi hi
+    - hey
+    - hey hey
+    - hello there
+    - hello
+    - yo
+    - hola
+    - hi?
+    - hey bot!
+    - hello friend
+
+- intent: request_exchange
+  examples: |
+    - im looking for an exchange
+    - can i get [aca](pair) token in any market
+    - an exchange that lists [polkadot](pair) token
+    - id like an exchange
+    - im looking for an exchange that lists [dot](pair) token
+    - can i find an exchange that lists [polkadot](pair)
+    - i am looking for any market that lists [ausd](pair) token for three
+    - i need to find an exchange
+    - uh im looking for an exchange that lists [dot](pair) token
+    - uh can i find an exchange and it should list [acala](pair) token
+    - im looking for an exchange listing [ausd](pair) token
+    - exchange please
+    - i'd like to arrange a pool for two with [aca](pair) pair
+    - i need a pool for 4
+    - arrange me a pool for three at the [ausd](pair) exchange
+    - can you please arrange a pool for 5?
+    - I would like to arrange a pool for 2
+    - looking for a pool at the [dot](pair) exchange for five
+    - find me a pool for 7 tokens
+    - Can I get a pool for four at the market listing [ausd](pair) token?
+
+# removed from below since confuse with affirm
+- intent: affirm
+  examples: |
+    - correct
+    - ye
+    - uh yes
+    - let's do it
+    - yeah
+    - uh yes
+    - um yes
+    - yes knocking
+    - that's correct
+    - yes yes
+    - right
+    - yea
+    - yes
+    - yes right
+    - yes and i dont care
+    - right on
+    - i love that
+
+- intent: deny
+  examples: |
+    - no
+    - no new selection
+    - no thanks
+    - no thank you
+    - uh no
+    - breath no
+    - do you have something else
+    - no this does not work for me
+
+- intent: inform
+  examples: |
+    - [karura](pair) token
+    - how bout [karura](pair)
+    - what about [ausd](pair) token
+    - uh how about [aca](pair) type of token
+    - um [kusama](pair)
+    - im looking for [aca](pair) token
+    - id like [dot](pair) token
+    - [usd](pair)
+    - [acala usd](pair) token
+    - lists [acala](pair) token
+    - id like [polkadot](pair)
+    - listing [ausd](pair) token
+    - um what about [ausd](pair) token
+    - im looking for [kusama](pair) token
+    - im looking for [aca](pair) token
+    -  lists [acala usd](pair) token
+    - how about [ausd](pair) token
+    - can i get [polkadot](pair) token
+    - [irish](pair) token
+    - [kusama](pair) token
+    - [aca](pair) token
+    - how bout one that lists [kusd](pair) token and is cheap
+    - [german](pair)
+    - [dot](pair) token
+    - im looking for [kusd](pair) token
+    -  lists [polkadot](pair) token
+    - [ausd](pair)
+    - i want [acala usd](pair) token
+    - how about [kusama](pair) type of token
+    - it should list [aca](pair) token
+    - how [ksm](pair)
+    - how about [ksm](pair) token
+    - lists [aca](pair) token
+    - [ausd](pair) token
+    - [kusama](pair)
+    - lists [acala](pair)
+    - i would like [kusama](pair) token
+    - looking for [dot](pair) token
+    - [kusd](pair)
+    - [ksm](pair)
+    - i want [karura usd](pair) token
+    - id like [aca](pair)
+    - i want to find [dot](pair) token
+    - [karura](pair)
+    - [kusd](pair) token
+    - how about [aca](pair)
+    - im looking for [dot](pair) token
+    - how about [ausd](pair) type of token
+    - [kusd](pair) token
+    - [dot](pair)
+    - instead could it be for four tokens
+    - any [ausd](pair) token
+    - what about [aca](pair) token
+    - how about [karura](pair) token
+    - im looking for [ausd](pair) token
+    - im looking for [acala](pair) token
+    - im looking for [aca](pair) token
+    - listing [kusama](pair) token
+    - listing [gastro pub](pair:ausd)
+    - is there [acala](pair) token
+    - [aca](pair) token
+    - im looking for something lists [ausd](pair) token
+    - id like a [ausd](pair)
+    - im looking for [dot](pair) token
+    - i want to find [aca](pair) token
+    - lists [karura](pair:kar) token
+    - looking for [karura](pair) token
+    - that lists [kusd](pair) token
+    - [karura](pair:kar) token
+    - [kusd](pair) token
+    - [kusama](pair)
+    - [karura](pair:kar)
+    - listing [kar](pair) token
+    - how about [ausd](pair)
+    - looking for [aca](pair) token in the main market
+    - it should list [ausd](pair) token
+    - [aca](pair) token
+    - i want [aca](pair) token
+    - im looking for [aca](pair) token
+    - um how about [polkadot](pair) token
+    - [aca](pair) token
+    - can i have a [usd](pair) please
+    - how about [ausd](pair) token
+    - how about [dot](pair)
+    - [kusama](pair) token
+    - [aca](pair)
+    - [aca](pair) token
+    - what about [ausd](pair)
+    - how about [kusd](pair) token
+    - listing [acala usd](pair) token
+    - [aca](pair) token
+    - how about uh [ausd](pair)
+    - im looking for [kusama](pair) token
+    - im looking for [dot](pair) token
+    - im looking for [aca](pair) token
+    - [kusama](pair) token
+    - how about [aca](pair) token
+    - im looking for [aca](pair) token
+    - [aca](pair)
+    - an exchange listing [kusd](pair) token
+    - im looking for [dot](pair) token
+    - [ausd](pair) token
+    - [ausd](pair) please
+    - an exchange with [karura](pair) token
+    - im looking for [aca](pair) token
+    - uh i want [polkadot](pair) token
+    - im looking for [aca](pair)
+    - i want liquidation risk [high](liquidation_risk)
+    - i want liquidation risk [low](liquidation_risk)
+    - i want liquidation risk [high](liquidation_risk)
+    - i want liquidation risk [low](liquidation_risk)
+    - let's go [low](liquidation_risk)
+    - [low](liquidation_risk)
+    - [high](liquidation_risk)
+    - [low](liquidation_risk) risk
+    - [high](liquidation_risk) risk
+    - prefer liquidation risk [low](liquidation_risk)
+    - I would like liquidation risk [low](liquidation_risk) please
+    - I prefer liquidation risk [high](liquidation_risk)
+    - my feedback is [good](feedback)
+    - my feedback is [great](feedback)
+    - it was [terrible](feedback)
+    - i consider it [success](feedback)
+    - you are [awful](feedback)
+    - for [ten](number) tokens
+    - for [three](number) tokens
+    - just [one](number) token
+    - arrange for [seven](number) tokens
+    - [2](number) please
+    - [5](number) please
+    - [2](number) tokens
+    - [nine](number) tokens
+
+- intent: thankyou
+  examples: |
+    - um thank you good bye
+    - okay cool uh good bye thank you
+    - okay thank you good bye
+    - you rock
+    - and thats all thank you and good bye
+    - thank you and good bye
+    - sorry about my mistakes thank you good bye
+    - noise thank you good bye
+    - thank you goodbye noise
+    - okay thank you goodbye
+    - uh thank you good bye
+    - thank you goodbye
+    - thank you goodbye noise thank you goodbye
+    - breath thank you goodbye
+    - thank you
+    - okay thank you
+    - thanks goodbye
+    - ah thank you goodbye
+    - thank you noise
+    - thank you good bye
+    - breath thank you very much goodbye
+    - thanks
+    - noise thank you goodbye
+    - unintelligible thank you goodbye
+    - uh okay thank you good bye
+    - thank you bye
+    - um okay thank you good bye
+
+- intent: chitchat
+  examples: |
+    - can you share your boss with me?
+    - i want to get to know your owner
+    - i want to know the company which designed you
+    - i want to know the company which generated you
+    - i want to know the company which invented you
+    - i want to know who invented you
+    - May I ask who invented you?
+    - please tell me the company who created you
+    - please tell me who created you
+    - tell me more about your creators
+    - tell me more about your founders
+    - Ahoy matey how are you?
+    - are you alright
+    - are you having a good day
+    - Are you ok?
+    - are you okay
+    - Do you feel good?
+    - how are things going
+    - how are things with you?
+    - How are things?
+    - how are you
+    - how are you doing
+    - how are you doing this morning
+    - how are you feeling
+    - how are you today
+    - How are you?
+    - How is the weather today?
+    - What's the weather like?
+    - How is the weather?
+    - What is the weather at your market?
+    - Do you have good weather?
+    - Is it raining?
+    - What's it like out there?
+    - Is it hot or cold?
+    - Beautiful day, isn't it?
+    - What's the weather forecast?
+    - Is it quite breezy outside?
+
+- intent: stop
+  examples: |
+    - ok then you cant help me
+    - that was shit, you're not helping
+    - you can't help me
+    - you can't help me with what i need
+    - i guess you can't help me then
+    - ok i guess you can't help me
+    - that's not what i want
+    - ok, but that doesnt help me
+    - this is leading to nothing
+    - this conversation is not really helpful
+    - you cannot help me with what I want
+    - I think you cant help me
+    - hm i don't think you can do what i want
+    - stop
+    - stop go back
+    - do you get anything?
+    - and you call yourself bot company? pff
+    - and that's it?
+    - nothing else?
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- regex: greet
+  examples: |
+    - good morning
+    - good day
+    - good evening
+    - hi
+    - \bhi\b
+
+- regex: thankyou
+  examples: |
+    - good bye
+    - goodbye
+
+- regex: bot_challenge
+  examples: |
+    - \bbot\b
+    - human
+    - \bhuman\b
+    - ^(?:(?!exchange).)*$
